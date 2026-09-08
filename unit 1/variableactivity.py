@@ -16,4 +16,15 @@
 # snake case - when creating a variable using snake case 
 # we use a underscore symbol to space out each new word 
 # the reason why its called snake  case is bc the underscore 
-#represents a snake on the groud new_word_
+#represents a snake on the groud new_word_ 
+
+ 
+applecount = 30 
+studentcount = 25 
+travleinsurance = add 
+goldpass= 50 
+bronzepass=15 
+sliverpass=30
+water=8 
+milkeshake=12
+proteinshake=20

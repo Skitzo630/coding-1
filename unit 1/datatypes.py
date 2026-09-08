@@ -22,15 +22,5 @@
  # boolean- a data type that can only be either true or false 
  #we do not use quotation marks for boolean vaules. the computer
  # understand these words as something unique 
-  
-false
-  true 
-
-
-    
-     
-applecount = 30 
-studentcount = 25 
-travleinsurance = add 
-we choose the gold membership its better than the bronze membership and the sliver membership
-diffrentdrinks = for a protein shake - the price is 15:99, for the milkshake  - the price is 12:99 ,and for your water -its 5:99
+#false
+#true
