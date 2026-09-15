@@ -29,4 +29,33 @@ print (10 > 1) # greater than operator
 print (10 < 2) # less than operator 
 
 # 2 equals sign compare if something is the same
-print ( "elias" == "elias") # same as ( false)
+print ( "elias" == "elias") # same as ( false) 
+print  ("2" ==2 )# same as (false) 
+print (2.0 == 2 ) # same as (true) 
+
+# not equal is written with  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# and - checks if 2 conditions are true. 
