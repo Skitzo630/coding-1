@@ -10,4 +10,11 @@ print(int(val) + 360)
 
 val = input ("") 
 val2 = "Boys Latin" 
-print (val  ==val2)
+print (val  ==val2) 
+
+
+   
+
+
+val = input("type in days car has been left")
+print (int(val)* 15 )
