@@ -33,4 +33,18 @@ def guessinggame():
         print (" congrats! you guess the right number!") 
          
 guessinggame()
-          
+           
+            
+             
+
+def Password():
+    CorrectPassword = '1200'
+    attemps = 4
+    print('type your password...')
+    userPassword = str(input('password...'))
+
+    while userPassword != CorrectPassword
+    print('wrong password..please try again')
+    attemps -=1
+    print('wrong attemps:' +str(attemps))
+    userPassword = str(input('password...'))
