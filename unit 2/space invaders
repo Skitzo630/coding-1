@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Space Invaders</title>
+<style>
+body {
+  margin: 0;
+  background: #080d24;
+  color: white;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+h1 { color: #48e9ff; }
+canvas {
+  background: #030817;
+  border: 3px solid #48e9ff;
+  max-width: 95%;
+}
+button {
+  padding: 12px 22px;
+  margin: 10px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1>SPACE INVADERS</h1>
+<p>Score: <span id="score">0</span></p>
+<p>Lives: <span id="lives">3</span></p>
+<canvas id="game" width="600" height="440"></canvas>
+<p>
+  <button onclick="move(-1)">LEFT</button>
+  <button onclick="shoot()">SHOOT</button>
+  <button onclick="move(1)">RIGHT</button>
+</p>
+<button onclick="startGame()">START / RESTART</button>
+
+<script>
+const canvas = document.getElementById("game");
+const ctx = canvas.getContext("2d");
+
+let player, aliens, bullets;
+let score, lives, direction, playing;
+let keys = {};
+
+function startGame() {
+  player = {x: 280, y: 390, w: 40, h: 25};
+  aliens = [];
+  bullets = [];
+  score = 0;
+  lives = 3;
+  direction = 1;
+  playing = true;
+
+  for (let r = 0; r < 4; r++) {
+    for (let c = 0; c < 8; c++) {
+      aliens.push({
+        x: 60 + c * 60,
+        y: 40 + r * 40,
+        w: 30,
+        h: 25,
+        alive: true
+      });
+    }
+  }
+  updateScore();
+}
+
+function updateScore() {
+  document.getElementById("score").textContent = score;
+  document.getElementById("lives").textContent = lives;
+}
+
+function move(amount) {
+  if (!playing) return;
+  player.x += amount * 25;
+  player.x = Math.max(0, Math.min(560, player.x));
+}
+
+function shoot() {
+  if (playing && bullets.length < 5) {
+    bullets.push({
+      x: player.x + 18,
+      y: player.y
+    });
+  }
+}
+
+document.addEventListener("keydown", e => {
+  keys[e.key] = true;
+  if (e.key === " ") shoot();
+});
+document.addEventListener("keyup", e => {
+  keys[e.key] = false;
+});
+
+function update() {
+  if (!playing) return;
+
+  if (keys.ArrowLeft || keys.a) move(-0.25);
+  if (keys.ArrowRight || keys.d) move(0.25);
+
+  aliens.forEach(a => {
+    if (!a.alive) return;
+    a.x += direction * 1.3;
+
+    if (a.x > 560 || a.x < 10) {
+      direction *= -1;
+      aliens.forEach(enemy => enemy.y += 10);
+    }
+  });
+
+  bullets.forEach(b => b.y -= 6);
+
+  bullets.forEach(b => {
+    aliens.forEach(a => {
+      if (a.alive &&
+          b.x > a.x && b.x < a.x + a.w &&
+          b.y > a.y && b.y < a.y + a.h) {
+        a.alive = false;
+        b.y = -100;
+        score += 10;
+        updateScore();
+      }
+    });
+  });
+
+  bullets = bullets.filter(b => b.y > 0);
+
+  if (aliens.every(a => !a.alive)) {
+    playing = false;
+    alert("YOU WIN! Score: " + score);
+  }
+
+  if (aliens.some(a => a.alive && a.y > 365)) {
+    playing = false;
+    alert("GAME OVER!");
+  }
+}
+
+function draw() {
+  ctx.clearRect(0, 0, 600, 440);
+
+  // Draw player
+  ctx.fillStyle = "#35e9a0";
+  ctx.fillRect(player.x, player.y, player.w, player.h);
+
+  // Draw aliens
+  ctx.fillStyle = "#ff5d9e";
+  aliens.forEach(a => {
+    if (a.alive) {
+      ctx.fillRect(a.x, a.y, a.w, a.h);
+    }
+  });
+
+  // Draw bullets
+  ctx.fillStyle = "#ffff55";
+  bullets.forEach(b => {
+    ctx.fillRect(b.x, b.y, 5, 12);
+  });
+}
+
+function gameLoop() {
+  if (playing) update();
+  draw();
+  requestAnimationFrame(gameLoop);
+}
+
+startGame();
+gameLoop();
+</script>
+</body>
+</html>
