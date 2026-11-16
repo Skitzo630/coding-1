@@ -1,0 +1,41 @@
+I wanna create a game that has something to do with sports and is playable for everyone.    
+1. Beginner Tutorial – Give new players a step-by-step tutorial that teaches them how to build, collect, upgrade, and earn coins.
+
+2. Starter Rewards – Give every new player free coins, building materials, and a starter bucket.
+
+3. Help Button – Add a help button that explains how every game feature works.
+
+4. Player Support Center – Create a support menu where players can report problems, ask questions, and get assistance.
+
+5. Beginner Boosts – Give new players temporary boosts so they can progress without feeling too far behind.
+
+6. Auto-Build Support – Let players unlock tools that help them build their buckets faster.
+
+7. Upgrade Suggestions – Show players which upgrades would help them the most.
+
+8. Save Progress System – Automatically save player levels, coins, buckets, pets, and upgrades.
+
+9. Anti-Scam Protection – Add trade confirmations so players don't accidentally trade away valuable items.
+
+10. Anti-Cheat System – Detect unfair advantages and protect the game economy.
+
+11. Team Support – Allow players to create teams and help each other collect materials.
+
+12. Player Reporting – Give players a way to report bullying, cheating, or inappropriate behavior.
+
+13. Daily Login Help – Remind players about daily rewards and available challenges.
+
+14. Lag Reduction – Optimize the game so it runs smoothly on different computers and devices.
+
+15. Accessible Controls – Include adjustable controls, clear instructions, and settings for different players.
+
+16. Private Servers – Allow players to create private spaces to play with friends.
+
+17. Recovery System – Help players recover lost progress if something goes wrong.
+
+18. Fair Rewards – Make sure free-to-play players can earn valuable items without having to spend money.
+
+19. Community Suggestions – Let players suggest new features and vote on updates.
+
+20. Regular Updates – Fix bugs, improve existing features, and introduce new content based on player feedback.
+   
